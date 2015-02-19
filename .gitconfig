@@ -1,0 +1,42 @@
+[core]
+	autocrlf = false
+[alias]
+	st = status -sb
+  ci = commit
+  br = branch
+  co = checkout
+  amend = commit --amend
+  aa = add --all
+  ac = add -u
+  df = diff
+  dfc = diff --cached
+  lg = log -p
+  last = log --oneline -n1
+  update = pull --rebase origin master
+  comp = log origin/master.. --oneline --stat
+	# Fancy logging.
+	#   h = head
+	#   hp = head with patch
+	#   r = recent commits, only current branch
+	#   ra = recent commits, all reachable refs
+	#   l = all commits, only current branch
+	#   la = all commits, all reachable refs
+	head = !git r -1
+	h = !git head
+	hp = "!. ~/.githelpers && show_git_head"
+	r = !GIT_NO_PAGER=1 git l -30
+	ra = !git r --all
+	l = "!. ~/.githelpers && pretty_git_log"
+	la = !git l --all
+	alias = config --global alias.
+	stat = log --stat
+	nuke = reset --hard HEAD
+[alais]
+	update = git pull --rebase origin master
+[diff]
+[color]
+    ui = auto
+[credential]
+	helper = store
+[push]
+	default = simple
