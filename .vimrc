@@ -1,6 +1,5 @@
-au GUIEnter * simalt ~x
-
 if has('gui_running')
+	au GUIEnter * simalt ~x
 	set guifont=Consolas:h12:cANSI
 	colorscheme Tomorrow-Night-Bright
 else
