@@ -27,7 +27,7 @@ set term=xterm
 set t_Co=256
 let &t_AB="\e[48;5;%dm"
 let &t_AF="\e[38;5;%dm"
-color jellybeans
+set timeoutlen=1000 ttimeoutlen=0
 
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn)$',
