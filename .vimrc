@@ -17,7 +17,9 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'luochen1990/rainbow'
 Plugin 'bling/vim-airline'
+Plugin 'rking/ag.vim'
 call vundle#end()
+
 filetype plugin indent on
 
 set laststatus=2
@@ -113,4 +115,5 @@ let g:rainbow_conf = {
 let g:airline_right_sep=''
 let g:airline_left_sep=''
 let g:airline_theme='badwolf'
+let g:airline_section_b = airline#section#create('%{virtualenv#statusline()}')
 
