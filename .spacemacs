@@ -7,10 +7,11 @@
   (setq-default
    ;; List of additional paths where to look for configuration layers.
    ;; Paths must have a trailing slash (ie. `~/.mycontribs/')
-   dotspacemacs-configuration-layer-path '()
+   dotspacemacs-configuration-layer-path '("~/dotfiles/")
    ;; List of configuration layers to load. If it is the symbol `all' instead
    ;; of a list then all discovered layers will be installed.
-   dotspacemacs-configuration-layers '(git
+   dotspacemacs-configuration-layers '(nathanw
+                                       git
                                        auto-completion
                                        themes-megapack
                                        markdown
@@ -18,9 +19,9 @@
                                        windows-scripts
                                        syntax-checking
                                        evil-commentary
-                                       c-c++
                                        csharp
                                        javascript
+                                       c-c++
                                        )
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '()
@@ -46,7 +47,8 @@ before layers configuration."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(soft-charcoal
+   dotspacemacs-themes '(seti
+                         soft-charcoal
                          spacegray
                          professional
                          solarized-dark
@@ -129,7 +131,11 @@ layers configuration."
   (global-company-mode t)
   (golden-ratio-mode t)
   (setq projectile-enable-caching t
-        projectile-indexing-method 'alien)
+        projectile-indexing-method 'alien
+        powerline-default-separator 'curve
+        helm-always-two-windows nil
+        helm-split-window-in-side-p t
+        compilation-scroll-output 'first-error)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
