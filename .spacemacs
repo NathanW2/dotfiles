@@ -11,6 +11,9 @@
    ;; List of configuration layers to load. If it is the symbol `all' instead
    ;; of a list then all discovered layers will be installed.
    dotspacemacs-configuration-layers '(nathanw
+                                       shell
+                                       eyebrowse
+                                       emcas-lisp
                                        git
                                        auto-completion
                                        themes-megapack
@@ -60,7 +63,7 @@ before layers configuration."
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
    dotspacemacs-default-font '("Consolas"
-                               :size 14
+                               :size 10
                                :weight bold
                                :width normal
                                )
@@ -79,7 +82,7 @@ before layers configuration."
    dotspacemacs-enable-paste-micro-state t
    ;; Guide-key delay in seconds. The Guide-key is the popup buffer listing
    ;; the commands bound to the current keystrokes.
-   dotspacemacs-guide-key-delay 0.3
+   dotspacemacs-guide-key-delay 0.5
    ;; If non nil a progress bar is displayed when spacemacs is loading. This
    ;; may increase the boot time on some systems and emacs builds, set it to
    ;; nil ;; to boost the loading time.
