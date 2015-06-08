@@ -11,6 +11,7 @@
    ;; List of configuration layers to load. If it is the symbol `all' instead
    ;; of a list then all discovered layers will be installed.
    dotspacemacs-configuration-layers '(nathanw
+                                       chrome
                                        shell
                                        eyebrowse
                                        emcas-lisp
@@ -18,10 +19,14 @@
                                        auto-completion
                                        themes-megapack
                                        markdown
+                                       dash
+                                       colors
                                        python
                                        windows-scripts
                                        syntax-checking
+                                       spotify
                                        evil-commentary
+                                       restclient
                                        csharp
                                        javascript
                                        c-c++
@@ -130,7 +135,8 @@ layers configuration."
   (setq-default git-enable-github-support t
                 git-magit-status-fullscreen t
                 auto-completion-use-tab-instead-of-enter nil
-                auto-completion-enable-company-help-tooltip t)
+                auto-completion-enable-company-help-tooltip t
+                auto-completion-enable-sort-by-usage t)
   (global-company-mode t)
   (golden-ratio-mode t)
   (setq projectile-enable-caching t
