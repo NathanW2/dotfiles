@@ -1,19 +1,22 @@
 [core]
 	autocrlf = false
+	editor = vim
 [alias]
 	st = status -sb
-  ci = commit
-  br = branch
-  co = checkout
-  amend = commit --amend
-  aa = add --all
-  ac = add -u
-  df = diff
-  dfc = diff --cached
-  lg = log -p
-  last = log --oneline -n1
-  update = pull --rebase origin master
-  comp = log origin/master.. --oneline --stat
+	ci = commit
+	br = branch
+	co = checkout
+	amend = commit --amend
+	aa = add --all
+	ac = add -u
+        ca = !git add -A && git commit -av
+	df = diff
+	dfc = diff --cached
+	lg = log -p
+        l = log --pretty=oneline -n 20 --graph --abbrev-commit --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d'
+	last = log --oneline -n1
+	update = pull --rebase origin master
+	comp = log origin/master.. --oneline --stat
 	# Fancy logging.
 	#   h = head
 	#   hp = head with patch
@@ -26,11 +29,16 @@
 	hp = "!. ~/.githelpers && show_git_head"
 	r = !GIT_NO_PAGER=1 git l -30
 	ra = !git r --all
-	l = "!. ~/.githelpers && pretty_git_log"
 	la = !git l --all
 	alias = config --global alias.
 	stat = log --stat
 	nuke = reset --hard HEAD
+	go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
+	tags = tag -l
+	branches = branch -a
+	remotes = remote -v
+	contributors = shortlog --summary --numbered
+	fm = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short --grep=$1; }; f"
 [alais]
 	update = git pull --rebase origin master
 [diff]
