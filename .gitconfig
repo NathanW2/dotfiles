@@ -16,7 +16,8 @@
         l = log --pretty=oneline -n 20 --graph --abbrev-commit --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d'
 	last = log --oneline -n1
 	update = pull --rebase origin master
-	comp = log origin/master.. --oneline --stat
+	comp = log @{upstream}.. --oneline --stat
+	wat = log @{upstream}.. --oneline
 	# Fancy logging.
 	#   h = head
 	#   hp = head with patch
@@ -39,8 +40,8 @@
 	remotes = remote -v
 	contributors = shortlog --summary --numbered
 	fm = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short --grep=$1; }; f"
-[alais]
-	update = git pull --rebase origin master
+	dad = !curl https://icanhazdadjoke.com/ && git add
+	pick = cherry-pick
 [diff]
 [color]
     ui = auto
@@ -48,3 +49,6 @@
 	helper = store
 [push]
 	default = simple
+[user]
+	name = Nathan Woodrow
+	email = woodrow.nathan@gmail.com
