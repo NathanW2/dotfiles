@@ -15,7 +15,7 @@
 	lg = log -p
         l = log --pretty=oneline -n 20 --graph --abbrev-commit --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d'
 	last = log --oneline -n1
-	update = pull --rebase origin master
+	update = pull origin master --rebase
 	comp = log @{upstream}.. --oneline --stat
 	wat = log @{upstream}.. --oneline
 	# Fancy logging.
