@@ -2,9 +2,10 @@
 	autocrlf = false
 	editor = vim
 [alias]
+	p = push
 	st = status -sb
 	ci = commit
-	br = branch
+	b = branch
 	co = checkout
 	amend = commit --amend
 	aa = add --all
@@ -18,13 +19,6 @@
 	update = pull origin master --rebase
 	comp = log @{upstream}.. --oneline --stat
 	wat = log @{upstream}.. --oneline
-	# Fancy logging.
-	#   h = head
-	#   hp = head with patch
-	#   r = recent commits, only current branch
-	#   ra = recent commits, all reachable refs
-	#   l = all commits, only current branch
-	#   la = all commits, all reachable refs
 	head = !git r -1
 	h = !git head
 	hp = "!. ~/.githelpers && show_git_head"
@@ -38,10 +32,12 @@
 	tags = tag -l
 	branches = branch -a
 	remotes = remote -v
-	contributors = shortlog --summary --numbered
+	contrib = shortlog --summary --numbered
 	fm = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short --grep=$1; }; f"
 	dad = !curl https://icanhazdadjoke.com/ && git add
 	pick = cherry-pick
+	br = for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))' 
+	ski = stash --keep-index
 [diff]
 [color]
     ui = auto
